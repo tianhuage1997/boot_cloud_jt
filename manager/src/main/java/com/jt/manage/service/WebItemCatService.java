@@ -57,16 +57,10 @@ public class WebItemCatService {
                     }
                     //把数据准备完毕，准备封装二级菜单
                 itemCatData2.setItems(itemCatDataList3);
-//                    if(itemCatDataList2.size()>7){
-//                        break;
-//                    }
                 itemCatDataList2.add(itemCatData2);
             }
             //把数据准备完毕，准备封装一级菜单
             itemCatData1.setItems(itemCatDataList2);
-//            if(itemCatDataList1.size()>7){
-//                break;
-//            }
             itemCatDataList1.add(itemCatData1);
         }
         //封装完毕，直接放到ItemCatResult中

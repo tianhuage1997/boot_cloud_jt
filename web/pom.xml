@@ -38,7 +38,14 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
-
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-eureka</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-feign</artifactId>
+    </dependency>
     <!-- Spring Boot Redis 依赖http://blog.csdn.net/kkgbn/article/details/52174093 -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -106,7 +113,15 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <!--注意这个位置，必须是springboot支持的版本。否则会报出依赖会有错误，但是编译没有问题
+        运行出 java.net.UnknownHostException: 的错-->
+        <version>Dalston.SR4</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <build>
