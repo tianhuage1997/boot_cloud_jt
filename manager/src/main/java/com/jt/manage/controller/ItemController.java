@@ -72,6 +72,14 @@ public class ItemController {
 		ItemDesc desc=itemService.queryItemDesc(itemId);
 		return SysResult.oK(desc);
 	}
+
+	//基于商品id，查询商品数据
+	@RequestMapping("itemById")
+	@ResponseBody
+	public Item queryItemById(String itemId){
+		Item item = itemService.queryItemById(itemId);
+		return  item;
+	}
 }
 
 

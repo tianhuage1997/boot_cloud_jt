@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient("server-manager")
 public interface ItemServiceFeignClient {
 
-      @RequestMapping(value = "hi" ,method = RequestMethod.GET)
+      @RequestMapping(value = "item/itemById" ,method = RequestMethod.GET)
       String  queryItemByItemId(@RequestParam(value = "itemId")  String itemId);
 }

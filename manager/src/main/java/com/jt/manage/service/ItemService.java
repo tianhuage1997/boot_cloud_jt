@@ -100,6 +100,12 @@ public class ItemService {
 		}
 		
 	}
+
+	public  Item queryItemById(String itemId){
+		Long itemIdCase=Long.parseLong(itemId);
+		Item item = itemMapper.selectByPrimaryKey(itemIdCase);
+		return  item;
+	}
 }
 
 
