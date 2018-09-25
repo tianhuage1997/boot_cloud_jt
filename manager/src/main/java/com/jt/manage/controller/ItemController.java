@@ -11,6 +11,8 @@ import com.jt.common.vo.SysResult;
 import com.jt.manage.pojo.Item;
 import com.jt.manage.pojo.ItemDesc;
 import com.jt.manage.service.ItemService;
+import redis.clients.jedis.ShardedJedis;
+import redis.clients.jedis.ShardedJedisPool;
 
 @Controller
 @RequestMapping("item")
@@ -22,6 +24,7 @@ public class ItemController {
 	@RequestMapping("query")
 	@ResponseBody
 	public EasyUIResult queryItems(Integer page,Integer rows){
+
 		EasyUIResult result = itemService.queryItems(page,rows);
 		return result;
 	}
