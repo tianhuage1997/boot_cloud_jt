@@ -1,14 +1,16 @@
 package com.jt.manage.pojo;
 
-import javax.persistence.Column;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.jt.common.po.BasePojo;
 @Table(name="tb_item_cat") //只使用table注解,与表格对应时,默认对应于类名相同的驼峰映射结果的表名
 //ItemCat-->itemCat表格
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ItemCat extends BasePojo{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

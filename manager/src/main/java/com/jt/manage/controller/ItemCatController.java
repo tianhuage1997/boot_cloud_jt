@@ -1,5 +1,6 @@
 package com.jt.manage.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class ItemCatController {
 	@RequestMapping("item/cat/list")
 	@ResponseBody
 	public List<ItemCat> queryItemCats(
-			@RequestParam(defaultValue="0") Long id){
+			@RequestParam(defaultValue="0") Long id) throws IOException {
 		List<ItemCat> itemCatList=itemCatService.queryItemCats(id);
 		return itemCatList;
 	}

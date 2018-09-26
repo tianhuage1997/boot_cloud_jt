@@ -6,11 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication(exclude={
 		RedisAutoConfiguration.class,
-		RedisRepositoriesAutoConfiguration.class
+	 RedisRepositoriesAutoConfiguration.class
 })
+
 @MapperScan("com.jt.manage.mapper")
 @EnableEurekaClient
 public class ManageStart {
