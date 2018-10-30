@@ -5768,7 +5768,7 @@ function cancelAllUsedGiftCards(giftCardType) {
 		jQuery.ajax( {
 			type : "POST",
 			dataType : "json",
-			url : "/order/submit",
+			url : "/service/order/submit",
 			data : $("#orderForm").serialize(),
 			cache : false,
 			success : function(result) {

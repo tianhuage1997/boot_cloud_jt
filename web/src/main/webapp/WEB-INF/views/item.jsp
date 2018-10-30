@@ -136,12 +136,12 @@
 						<div class="wrap-input">
 								<a class="btn-reduce" href="javascript:;" onclick="setAmount.reduce('#buy-num')">减少数量</a>
 								<a class="btn-add" href="javascript:;" onclick="setAmount.add('#buy-num')">增加数量</a>
-<form id="cartForm" method="post">
-<input type="hidden" name="itemTitle" value="${item.title }"/>
-<input type="hidden" name="itemImage" value="${item.image }"/>
-<input type="hidden" name="itemPrice" value="${item.price }"/>
-<input class="text" id="buy-num" name="num" value="1" onkeyup="setAmount.modify('#buy-num');"/>
-</form>
+								<form id="cartForm" method="post">
+									<input class="text" id="buy-num" name="num" value="1" onkeyup="setAmount.modify('#buy-num');"/>
+									<input type="hidden" class="text"  name="itemTitle" value="${item.title}"/>
+									<input type="hidden" class="text" name="itemImage" value="${item.images[0]}"/>
+									<input type="hidden" class="text" name="itemPrice" value="${item.price}"/>
+								</form>
 						</div>
 					</div>
 				</li>
@@ -159,7 +159,7 @@
 		
 		<div id="preview">
 			<div id="spec-n1" class="jqzoom" clstag="shangpin|keycount|product|spec-n1">
-				<img data-img="1" width="350" height="350" src="${item.image}" alt="${item.title}"  jqimg="${item.image}"/>
+				<img data-img="1" width="350" height="350" src="${item.images[0]}" alt="${item.title}"  jqimg="${item.images[0]}"/>
 			</div>
 					
 			<div id="spec-list" clstag="shangpin|keycount|product|spec-n5">
@@ -167,7 +167,7 @@
 				<a href="javascript:;" class="spec-control" id="spec-backward"></a>
 				<div class="spec-items">
 					<ul class="lh">   
-						<c:forEach items="${item.image}" var="pic" varStatus="status">  
+						<c:forEach items="${item.images}" var="pic" varStatus="status">  
 							<c:choose>
 								<c:when test="${status.index == 0 }">
 									<li>

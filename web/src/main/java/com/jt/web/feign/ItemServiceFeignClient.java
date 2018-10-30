@@ -10,4 +10,6 @@ public interface ItemServiceFeignClient {
 
       @RequestMapping(value = "item/itemById" ,method = RequestMethod.GET)
       String  queryItemByItemId(@RequestParam(value = "itemId")  String itemId);
+
+
 }

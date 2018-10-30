@@ -95,12 +95,7 @@
       <artifactId>jsoup</artifactId>
       <version>1.9.1</version>
     </dependency>
-    <!--  引入cas客户端 -->
-    <!--<dependency>-->
-      <!--<groupId>net.unicon.cas</groupId>-->
-      <!--<artifactId>cas-client-autoconfig-support</artifactId>-->
-      <!--<version>1.4.0-GA</version>-->
-    <!--</dependency>-->
+
   <!-- 引入 -->
 
     <!--<dependency>-->

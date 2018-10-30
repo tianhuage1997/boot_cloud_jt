@@ -4,8 +4,11 @@ import com.jt.common.vo.SysResult;
 import com.jt.sso.mapper.UserMapper;
 import com.jt.sso.pojo.User;
 import com.jt.sso.service.UserService;
+import org.apache.shiro.crypto.hash.SimpleHash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
 
 @Service
 public class UserServiceImpl  implements UserService {
@@ -31,5 +34,20 @@ public class UserServiceImpl  implements UserService {
         }
         Boolean result =count==1? true:false;
         return result;
+    }
+
+    /*
+    注册用户
+     */
+    @Override
+    public void doRegister(User user) {
+            user.setCreated(new Date());
+            user.setUpdated(user.getCreated());
+            //emial还没有设置，默认为手机号
+            user.setEmail(user.getPhone());
+            //对注册用户进行密码加密
+            SimpleHash MD5soltpassword=new SimpleHash("MD5", user.getUsername(), user.getPassword(), 1024);
+            user.setPassword(MD5soltpassword.toString());
+            userMapper.insert(user);
     }
 }

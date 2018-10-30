@@ -84,7 +84,12 @@
       <!--<groupId>org.springframework.boot</groupId>-->
       <!--<artifactId>spring-boot-starter-amqp</artifactId>-->
     <!--</dependency>-->
-
+    <!--  引入cas客户端 -->
+    <dependency>
+    <groupId>net.unicon.cas</groupId>
+    <artifactId>cas-client-autoconfig-support</artifactId>
+    <version>1.4.0-GA</version>
+    </dependency>
 
     <dependency>
       <groupId>common</groupId>

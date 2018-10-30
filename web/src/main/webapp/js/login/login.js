@@ -381,7 +381,7 @@ $("#loginsubmit").click(function () {
             },
             success: function (result) {
                 if (result) {
-                    var obj = eval(result);		//把result转成js对象
+                    var obj = eval(result);
                     if (obj.status == 200) {
                     	obj.success = "http://www.jt.com/index.html";
                         var isIE = !-[1,];

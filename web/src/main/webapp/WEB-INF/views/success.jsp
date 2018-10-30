@@ -42,7 +42,7 @@
 		<div class="mc" id="success_detail">	
 		    <ul class="list-order">
 			    <li class="li-st">
-					<div class="fore1">订单号：<a href="javascript:void(0)">${order.orderId }</a></div>
+					<div class="fore1">订单号：<a href="javascript:void(0)">${order.orderId}</a></div>
 					<!-- 货到付款 -->
 					<div class="fore2">货到付款：<strong class="ftx-01">${order.payment}元</strong></div>
 					<div class="fore3">

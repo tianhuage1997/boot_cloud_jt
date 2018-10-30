@@ -1,5 +1,5 @@
 package com.jt.manage;
-
+import net.unicon.cas.client.configuration.EnableCasClient;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,6 +15,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @MapperScan("com.jt.manage.mapper")
 @EnableEurekaClient
+@EnableCasClient
 public class ManageStart {
 	public static void main(String[] args) {
 		SpringApplication.run(ManageStart.class,  args);

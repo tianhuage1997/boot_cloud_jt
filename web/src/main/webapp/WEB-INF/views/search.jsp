@@ -2,7 +2,6 @@
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -35,8 +34,8 @@
 	<a href="search.html?q=${query}&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=5">5</a>
 	<a href="search.html?q=${query}&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=6">6</a>
 	<span class="text">…</span>
-	<a href="search.html?q=${query}&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=2" class="next">下一页<b></b></a>
-	<span class="page-skip"><em>&nbsp;&nbsp;共${paginator.prePage}${paginator.totalPages}页&nbsp;&nbsp;&nbsp;&nbsp;到第</em></span>
+	<a href="search?keyword=${query}&enc=utf-8&qr=&qrst=UNEXPAND&rt=1&page=2" class="next">下一页<b></b></a>
+	<span class="page-skip"><em>&nbsp;&nbsp;共${paginator.totalPages}页&nbsp;&nbsp;&nbsp;&nbsp;到第</em></span>
 </div>
 </div>
 <div class="m psearch " id="plist">
@@ -45,12 +44,12 @@
 <li class="item-book" bookid="11078102">
 	<div class="p-img">
 		<a target="_blank" href="http://www.jt.com/items/${item.id }.html">
-			<img width="160" height="160" data-img="1" data-lazyload="${item.image}" />
+			<img width="160" height="160" data-img="1" data-lazyload="${item.images[0]}" />
 		</a>
 	</div>
 	<div class="p-name">
 		<a target="_blank" href="http://www.jt.com/items/${item.id }.html">
-${fn:replace(item.title,query,'<span class=\"red\">'.concat(query).concat('</span>'))}
+			${item.title}
 		</a>
 	</div>
 	<div class="p-price">
