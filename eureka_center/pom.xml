@@ -8,6 +8,7 @@
   <artifactId>eureka_center</artifactId>
   <version>1.0-SNAPSHOT</version>
 
+
   <name>eureka_center</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
@@ -27,34 +28,78 @@
 
     <dependency>
       <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+    <!--<dependency>-->
+      <!--<groupId>org.apache.tomcat.embed</groupId>-->
+      <!--<artifactId>tomcat-embed-jasper</artifactId>-->
+      <!--&lt;!&ndash; 不打包的时候用，打包的时候注释&ndash;&gt;-->
+      <!--<scope>compile</scope>-->
+      <!--&lt;!&ndash; 打包的时候用，不打包的时候注释&ndash;&gt;-->
+      <!--&lt;!&ndash;  <scope>provided</scope> &ndash;&gt;-->
+   <!--</dependency>-->
+    <!--<dependency>-->
+      <!--<groupId>org.springframework.boot</groupId>-->
+      <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+      <!--<version>RELEASE</version>-->
+    <!--</dependency>-->
+
+    <!--<dependency>-->
+      <!--<groupId>org.springframework.boot</groupId>-->
+      <!--<artifactId>spring-boot-starter-jetty</artifactId>-->
+    <!--</dependency>-->
+
+
+    <!--servlet依赖 -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>3.1.0</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!--jstl依赖 -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+    </dependency>
+
+    <!--使jsp页面生效 -->
+    <!--<dependency>-->
+      <!--<groupId>org.apache.tomcat.embed</groupId>-->
+      <!--<artifactId>tomcat-embed-jasper</artifactId>-->
+    <!--</dependency>-->
   </dependencies>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>Edgware.RELEASE</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+ <dependencyManagement>
+   <dependencies>
+     <dependency>
+       <groupId>org.springframework.cloud</groupId>
+       <artifactId>spring-cloud-dependencies</artifactId>
+       <version>Edgware.RELEASE</version>
+       <type>pom</type>
+       <scope>import</scope>
+     </dependency>
 
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>1.5.9.RELEASE</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+     <dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-dependencies</artifactId>
+
+       <version>1.5.9.RELEASE</version>
+       <type>pom</type>
+       <scope>import</scope>
+     </dependency>
+   </dependencies>
+ </dependencyManagement>
 
 
-  <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+ <build>
+   <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -102,6 +147,21 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
 
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.5.5</version>
+          <configuration>
+            <archive>
+              <manifest>
+                <mainClass>eureka.center.EurekaCenterStart</mainClass>
+              </manifest>
+            </archive>
+            <descriptorRefs>
+              <descriptorRef>jar-with-dependencies</descriptorRef>
+            </descriptorRefs>
+          </configuration>
         </plugin>
       </plugins>
     </pluginManagement>

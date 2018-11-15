@@ -15,7 +15,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @MapperScan("com.jt.manage.mapper")
 @EnableEurekaClient
-@EnableCasClient
+//@EnableCasClient
 public class ManageStart {
 	public static void main(String[] args) {
 		SpringApplication.run(ManageStart.class,  args);
